@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+:root {
+    --gradient: linear-gradient(
+        43deg, #4158D0
+         0%, #C850C0
+          46%, #FFCC70
+          );
+}

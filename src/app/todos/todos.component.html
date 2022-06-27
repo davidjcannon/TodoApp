@@ -1,0 +1,30 @@
+<head>
+</head>
+<div>
+    <div class="title" *ngIf="getRouteNum() == 0">
+        To-do list
+    </div>
+    <div class="title alt" *ngIf="getRouteNum() == 1">
+        Completed
+    </div>
+
+    <div class="container">
+        <form class="top-bar" (submit)="addTodo()" *ngIf="getRouteNum() == 0">
+            <input type="text" name="inputTodo" placeholder="Enter text here..." class="todo-input" maxlength="100"
+                [(ngModel)]="inputTodo" />
+            <input type="submit" value="Add" class="todo-submit">
+        </form>
+
+        <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="showTodos"
+            (cdkDropListDropped)="onDrop($event)">
+            <div class="todo" [ngClass]="{'done' : getRouteNum() == 1}" *ngFor="let todo of showTodos; let i=index"
+                cdkDrag>
+                <div class="id">{{ i+1 }}</div>
+                <div class="content" [ngClass]="{'dText' : getRouteNum() == 1}" (click)="toggleDone(i, getRouteNum())">
+                    {{ todo }}</div>
+                <button class="delete" (click)="deleteTodo(i,getRouteNum())"><i style="font-size:24px"
+                        class="fa">&#xf014;</i></button>
+            </div>
+        </div>
+    </div>
+</div>

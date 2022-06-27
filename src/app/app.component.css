@@ -1,0 +1,29 @@
+.grad {
+    overflow: auto !important;
+    margin:0px;
+    height:100%;
+    width:100%;
+    -o-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+    background-color: #4158D0;
+    background-image: var(--gradient);
+          background-size: 300%;
+          background-position: left;
+          transition: background-position 1s;
+          animation: bg-animation 30s infinite alternate;
+          position: absolute;
+}
+
+.grad:hover, .grad:focus {
+    background-position: right;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
