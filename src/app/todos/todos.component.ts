@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,12 +21,6 @@ export class TodosComponent {
   constructor(private router: Router) {
     this.load();
     this.save();
-  }
-
-  delayAnimation(num: number) {
-    const value = (num * 100).toString() + "ms";
-    console.log(value);
-    return value;
   }
 
   getRouteNum(): number {
